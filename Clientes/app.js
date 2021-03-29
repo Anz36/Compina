@@ -7,7 +7,12 @@ $(function(){
             let r="";
             let lista = JSON.parse(respuesta);
             lista.forEach(element => {
-                console.log(element.id);
+                r +="<tr>"+
+                        "<td>"+element.id+"</td>"+
+                        "<td>"+element.nombre+"</td>"+
+                        "<td>"+element.empresa+"</td>"+
+                    "</tr>";
+                contador++;
             });
 
             //llenar datos html
