@@ -5,6 +5,7 @@ $(function(){
         success: function(respuesta){
             let tarea = JSON.parse(respuesta);
             let r ="";
+            let contador=0;
                 tarea.forEach(element => {
                     r +="<tr>"+
                             "<td></td>"+
