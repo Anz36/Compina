@@ -1,6 +1,6 @@
 <?php
     include ("../conexion/conexion.php");
-    $buscado = "ju";
+    $buscado = $_POST['buscado'];
     if(!empty($buscado)){
         $query = "SELECT * from clientes where nombres like '$buscado%'";
         $result = mysqli_query($conexion,$query);
