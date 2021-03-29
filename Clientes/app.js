@@ -23,7 +23,7 @@ $(function(){
     })
 
     $('#buscar').keyup(function(){        
-        if($('#buscar').val()){
+        if(($('#buscar').val()) !== ""){
             let contador = 0;
             let buscado = $('#buscar').val();
             console.log(buscado);
