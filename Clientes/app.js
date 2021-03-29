@@ -8,6 +8,8 @@ $(function(){
             let lista = JSON.parse(respuesta);
             lista.forEach(element => {
                 r +="<tr>"+
+                        "<td></td>"+
+                        "<td></td>"+ 
                         "<td>"+element.id+"</td>"+
                         "<td>"+element.nombre+"</td>"+
                         "<td>"+element.empresa+"</td>"+
