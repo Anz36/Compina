@@ -16,8 +16,8 @@ $(function(){
             });
 
             //llenar datos html
-            $('listaCLiente').html(r);
-            $('cantidadCliente').html("Actualmente hay un total de "+contador+" Clientes");
+            $('#listaCLiente').html(r);
+            $('#cantidadCliente').html("Actualmente hay un total de "+contador+" Clientes");
         }   
     })
 })
