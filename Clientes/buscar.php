@@ -2,7 +2,7 @@
     include ("../conexion/conexion.php");
     $buscado = $_POST['buscado'];
     if(!empty($buscado)){
-        $query = "SELECT * from clientes where nombres like '$buscado%'";
+        $query = "SELECT * from clientes where nombres like '$buscado%' or apellidos like '$buscado%' or empresa like '$buscado%'";
         $result = mysqli_query($conexion,$query);
         $json = array();
         while($row = mysqli_fetch_array($result)){
