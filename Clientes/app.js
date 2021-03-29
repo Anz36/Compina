@@ -1,6 +1,6 @@
 $(function(){
     $.ajax({
-        url: '../Backend/listar.php',
+        url: 'listar.php',
         type: 'GET',
         success: function(respuesta){
             let tarea = JSON.parse(respuesta);
@@ -28,7 +28,7 @@ $(function(){
             let buscado = $('#buscar').val();
             console.log(buscado);
             $.ajax({
-                url: 'Backend/buscar.php',
+                url: 'buscar.php',
                 type: 'POST',
                 data: {buscado},
                 success: function(respuesta){
