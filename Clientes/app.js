@@ -52,4 +52,27 @@ $(function(){
             })
         }
     })
+$.ajax({
+        url: 'listarRequerimientos.php',
+        type: 'GET',
+        success: function (respuesta){
+            let tarea = JSON.parse(respuesta);
+            let r ='';
+                tarea.forEach(element => {
+                    r +=`<tr>
+                            <td></td>
+                            <td></td>
+                            <td>${element.id}</td>
+                            <td>${element.nombre}</td>
+                            <td>${element.empresa}</td>
+                            <td>${element.email}</td>
+                            <td>${element.telefono}</td>
+                            <td>${element.fecha}</td>
+                            <td>${element.asunto}</td>
+                        </tr>`;                                                  
+                });
+            //llenar datos html
+            $('#listaRequerimientos').html(r);
+            }      
+    })
 })
