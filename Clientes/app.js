@@ -58,6 +58,7 @@ $.ajax({
         success: function (respuesta){
             let tarea = JSON.parse(respuesta);
             let r ='';
+            let c = 0;
                 tarea.forEach(element => {
                     r +=`<tr>
                             <td></td>
@@ -69,9 +70,11 @@ $.ajax({
                             <td>${element.telefono}</td>
                             <td>${element.fecha}</td>
                             <td>${element.asunto}</td>
-                        </tr>`;                                                  
+                        </tr>`; 
+                        c++;                                                 
                 });
             //llenar datos html
+            console.log(c);
             $('#listaRequerimientos').html(r);
             }      
     })
