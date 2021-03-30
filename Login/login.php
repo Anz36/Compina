@@ -12,9 +12,9 @@
     }
 
     if($_SESSION['usuario'] != "-1"){
-        header("Location: ../Clientes/index.php");
+        header("Location: ../Clientes/index.html");
     }
     else{
-        header("Location: login.php?mensaje=Datos incorrectos");
+        header("Location: index.html?mensaje=Datos incorrectos");
     }
 ?>
