@@ -32,14 +32,14 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-9">
+			<div class="col">
 					<button type="button" class="btn btn-primary rounded-pill" data-toggle="modal" data-target="#myModal">
 					    Agregar Cliente
 					  </button>
 
 					  <!-- The Modal -->
-					  <div class="modal" id="myModal">
-					    <div class="modal-dialog">
+					  <div class="modal fade" id="myModal">
+					    <div class="modal-dialog modal-lg">
 					      <div class="modal-content">
 					      
 					        <!-- Modal Header -->
@@ -50,27 +50,112 @@
 					        
 					        <!-- Modal body -->
 					        <div class="modal-body">
-					          Modal body..
+					          <div class="container">
+					          	<div class="row">
+					          		<div class="col-6">
+					          			<label for="name">Nombres</label>
+					          			<input type="text" placeholder="Su Nombre" class="form-control">
+					          		</div>
+					          		<div class="col-6">
+					          			<label for="last name">Apellidos</label>
+					          			<input type="text" placeholder="Su Apellido" class="form-control">
+					          		</div>
+					          	</div>
+					          	<div class="row">
+					          		<div class="col">
+					          			<label for="Email">Email</label>
+					          			<input type="email" placeholder="Su Email" class="form-control">
+					          		</div>
+					          	</div>
+					          	<div class="row">
+					          		<div class="col-6">
+					          			<label for="last name">F. Atencion</label>
+					          			<input type="text" class="bg-dark form-control">
+					          		</div>
+					          		<div class="col-6">
+					          			<label for="Skype">Skype</label>
+					          			<input type="text" placeholder="Su Skype" class="form-control">
+					          		</div>
+					          	</div>
+					          	<div class="row">
+					          		<div class="col">
+					          			<label for="cumpleaños">Cumpleaños</label>
+					          			<input type="date" class="form-control">
+					          		</div>
+					          		<div class="col">
+					          			<label for="telefono">Telefono</label>
+					          			<input type="text" class="form-control" placeholder="Su telefono">
+					          		</div>
+					          		<div class="col">
+					          			<label for="celular">Celular</label>
+					          			<input type="text" class="form-control" placeholder="Su Celular">
+					          		</div>
+					          	</div>
+					          	<div class="row">
+					          		<div class="col">
+					          			<label for="direccion">Dirección</label>
+					          			<input type="text" class="form-control" placeholder="Su Dirección">
+					          		</div>
+					          		<div class="col">
+					          			<label for="referencia">Referencia</label>
+					          			<input type="text" class="form-control" placeholder="Su referencia">
+					          		</div>
+					          	</div>
+					          	<div class="row">
+					          		<div class="col">
+					          			<label for="direccion">Distrito</label>
+					          			<select name="distrito" class="form-control">
+					          				<option value="null">Seleccione</option>
+					          			</select>
+					          		</div>
+					          	</div>
+					          	<div class="row">
+					          		<div class="col">
+					          			<label for="ciudad">Ciudad</label>
+					          			<input type="text" class="form-control" placeholder="Su Ciudad">
+					          		</div>
+					          		<div class="col">
+					          			<label for="provincia">Provincia</label>
+					          			<input type="text" class="form-control" placeholder="Su Provincia">
+					          		</div>
+					          		<div class="col">
+					          			<label for="pais">Pais</label>
+					          			<input type="text" class="form-control" placeholder="Su Pais">
+					          		</div>
+					          		<div class="col">
+					          			<label for="postal">C.Postal</label>
+					          			<input type="text" placeholder="Su C.Postal" class="form-control">
+					          		</div>
+					          	</div>
+					          	<div class="row">
+					          		<div class="col">
+					          			<label for="fechaAviso">Fecha Aviso</label>
+					          			<input type="date" class="form-control">
+					          		</div>
+					          		<div class="col">
+					          			<label for="fechaAviso">Fecha Atencion</label>
+					          			<input type="date" class="form-control">
+					          		</div>
+					          	</div>
+					          </div>
 					        </div>
 					        
 					        <!-- Modal footer -->
 					        <div class="modal-footer">
-					        	<button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Cerrar</button>
+					        	<button type="button" class="btn btn-success rounded-pill">Guardar</button>
 					          	<button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Cerrar</button>
 					        </div>
 					        
 					      </div>
 					    </div>
-			</div>
+					</div>
 			<a href="" class="btn btn-info rounded-pill">Eliminar Cliente</a>
-			<div class="col-3">
-				<a href="" class=" btn btn-link">Reporte Word/PDF</a>
-			</div>
 		</div>
-		<div class="row mt-3">
+	</div>
+		<div class="row mt-4">
 			<div class="col">
 				<label for="search">Busqueda</label>
-				<input type="text" name="search" placeholder="Busqueda ..." class="form-control">
+				<input type="text" name="search" placeholder="Busqueda ... Empresa/Cliente" class="form-control">
 			</div>
 		</div>
 		<div class="row">
