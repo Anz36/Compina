@@ -17,5 +17,5 @@
     else{
         header("Location: login.php?mensaje=Datos incorrectos");
     }
-    echo "guillermo vuelve";
+    echo "Daniel vuelve";
 ?>
