@@ -1,19 +1,15 @@
 $(function(){
-<<<<<<< Updated upstream
-    
-
     $('#buscar').keyup(function(){
         if($('#buscar').val()){
-=======
     $.ajax({
-        url: '/Backend/listar.php',
+        url: './Backend/listar.php',
         type: 'GET',
         success: function(respuesta){
->>>>>>> Stashed changes
+
             let contador = 0;
             let buscado = $('#buscar').val();
             $.ajax({
-                url: 'buscar.php',
+                url: './Backend/buscar.php',
                 type: 'POST',
                 data: {buscado},
                 success: function(respuesta){
@@ -44,7 +40,7 @@ $(function(){
             let buscado = $('#buscar').val();
             console.log(buscado);
             $.ajax({
-                url: 'buscar.php',
+                url: './Backend/buscar.php',
                 type: 'POST',
                 data: {buscado},
                 success: function(respuesta){
