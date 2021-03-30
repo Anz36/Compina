@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Modulo Cliente</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	
 </head>
@@ -30,9 +33,36 @@
 		</div>
 		<div class="row">
 			<div class="col-9">
-				<a href="" class="btn btn-info rounded-pill">Agregar Cliente</a>
-				<a href="" class="btn btn-info rounded-pill">Eliminar Cliente</a>
+					<button type="button" class="btn btn-primary rounded-pill" data-toggle="modal" data-target="#myModal">
+					    Agregar Cliente
+					  </button>
+
+					  <!-- The Modal -->
+					  <div class="modal" id="myModal">
+					    <div class="modal-dialog">
+					      <div class="modal-content">
+					      
+					        <!-- Modal Header -->
+					        <div class="modal-header">
+					          <h4 class="modal-title">Cliente Nuevo</h4>
+					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+					        </div>
+					        
+					        <!-- Modal body -->
+					        <div class="modal-body">
+					          Modal body..
+					        </div>
+					        
+					        <!-- Modal footer -->
+					        <div class="modal-footer">
+					        	<button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Cerrar</button>
+					          	<button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Cerrar</button>
+					        </div>
+					        
+					      </div>
+					    </div>
 			</div>
+			<a href="" class="btn btn-info rounded-pill">Eliminar Cliente</a>
 			<div class="col-3">
 				<a href="" class=" btn btn-link">Reporte Word/PDF</a>
 			</div>
