@@ -1,8 +1,15 @@
 $(function(){
+<<<<<<< Updated upstream
     
 
     $('#buscar').keyup(function(){
         if($('#buscar').val()){
+=======
+    $.ajax({
+        url: '/Backend/listar.php',
+        type: 'GET',
+        success: function(respuesta){
+>>>>>>> Stashed changes
             let contador = 0;
             let buscado = $('#buscar').val();
             $.ajax({
