@@ -1,3 +1,14 @@
+CREATE TABLE requirements (
+	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	name VARCHAR(255) NOT NULL,
+	business_name VARCHAR(255),
+	email VARCHAR(255), 
+	phone VARCHAR(255),
+	message longtext NOT NULL,
+	requirements_date datetime NOT NULL,
+	status VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id)
+) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE business (
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -8,6 +19,7 @@ CREATE TABLE business (
 	address_reference VARCHAR(255),
 	anniversary VARCHAR(50),
 	page_web VARCHAR(255),
+	PRIMARY KEY (id)
 ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE customers(
@@ -21,7 +33,7 @@ CREATE TABLE customers(
 	phone VARCHAR(50) NOT NULL,
 	movil VARCHAR(50) NOT NULL,
 	business BIGINT UNSIGNED NOT NULL,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
 	FOREIGN KEY (business) REFERENCES business (id) ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;
 
