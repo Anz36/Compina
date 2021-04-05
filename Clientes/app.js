@@ -7,13 +7,13 @@ $(function(){
             let r ="";
             let contador=0;
                 tarea.forEach(element => {
-                    r +="<tr>"+
-                            "<td></td>"+
-                            "<td></td>"+ 
-                            "<td>"+element.id+"</td>"+
-                            "<td>"+element.nombre+"</td>"+
-                            "<td>"+element.empresa+"</td>"+
-                        "</tr>";                                                  
+                    r +=`<tr>
+                            <td></td>
+                            <td></td>
+                            <td>${element.id}</td>
+                            <td>${element.nombre}</td>
+                            <td>${element.empresa}</td>
+                        </tr>`;                                                  
                     contador++;
                 });
             //llenar datos html
@@ -35,13 +35,13 @@ $(function(){
                     let tarea = JSON.parse(respuesta);
                     let r ="";
                     tarea.forEach(element => {
-                        r +="<tr>"+
-                                "<td></td>"+
-                                "<td></td>"+ 
-                                "<td>"+element.id+"</td>"+
-                                "<td>"+element.nombre+"</td>"+
-                                "<td>"+element.empresa+"</td>"+
-                            "</tr>"; 
+                        r +=`<tr>
+                            <td></td>
+                            <td></td>
+                            <td>${element.id}</td>
+                            <td>${element.nombre}</td>
+                            <td>${element.empresa}</td>
+                        </tr>`; 
                                                  
                         contador++;
                     });
