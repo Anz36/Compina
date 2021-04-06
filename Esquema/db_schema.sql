@@ -1,13 +1,14 @@
 CREATE TABLE requirements (
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	business BIGINT UNSIGNED NOT NULL,
 	name VARCHAR(255) NOT NULL,
-	business_name VARCHAR(255),
 	email VARCHAR(255), 
 	phone VARCHAR(255),
 	message longtext NOT NULL,
 	requirements_date datetime NOT NULL,
 	status VARCHAR(255) NOT NULL,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	FOREIGN KEY (business) REFERENCES business (id) ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE business (
@@ -24,6 +25,7 @@ CREATE TABLE business (
 
 CREATE TABLE customers(
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	business BIGINT UNSIGNED NOT NULL,
 	name VARCHAR(255) NOT NULL,
 	position VARCHAR(255) NOT NULL,
 	address VARCHAR(255) NOT NULL,
@@ -32,7 +34,6 @@ CREATE TABLE customers(
 	email VARCHAR(255) NOT NULL,
 	phone VARCHAR(50) NOT NULL,
 	movil VARCHAR(50) NOT NULL,
-	business BIGINT UNSIGNED NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (business) REFERENCES business (id) ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;
@@ -42,20 +43,21 @@ CREATE TABLE history (
 	people BIGINT UNSIGNED NOT NULL,
 	date_history datetime,
 	text longtext,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	FOREIGN KEY (people) REFERENCES business (id) ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE details_attention (
 	id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
 	people BIGINT UNSIGNED NOT NULL,
+	business BIGINT UNSIGNED NOT NULL,
+	history BIGINT UNSIGNED NOT NULL,
+	customers BIGINT UNSIGNED NOT NULL,
 	date_attention datetime NOT NULL,
 	date_notice datetime,
-	business BIGINT UNSIGNED NOT NULL,
 	type_customers VARCHAR(50),
 	origin VARCHAR(255),
-	history BIGINT UNSIGNED NOT NULL,
 	status VARCHAR(50) NOT NULL,
-	customers BIGINT UNSIGNED NOT NULL,
 	PRIMARY KEY (id)
 	FOREIGN KEY (people) REFERENCES people (id) ON UPDATE CASCADE,
 	FOREIGN KEY (business) REFERENCES business (id) ON UPDATE CASCADE,
