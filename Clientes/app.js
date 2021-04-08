@@ -23,7 +23,25 @@ $(function(){
     })
 
     $('#form_guardar').submit(function() {
-        console.log("Guardar");
+        var nombres = $('#nombres').val();
+        var apellidos = $('#apellidos').val();
+        var email = $('#email').val();
+        var telefono = $('#telefono').val();
+        var celular = $('#celular').val();
+        var posicion = $('#posicion').val();
+        var direccion = $('#direccion').val();
+        var distrito = $('#distrito').val();
+        var distrito = $('#ciudad').val();
+        var provincia = $('#provincia').val();
+
+        $.ajax({
+            url: "guardar.php",
+            type: 'POST',
+            data: {nombres,apellidos,email,telefono,celular,posicion,direccion,distrito,provincia},
+            success: function(respuesta){
+                alert(respuesta);
+            }
+        });
     })
 
     $('#buscar').keyup(function(){        
