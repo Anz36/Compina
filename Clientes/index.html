@@ -13,6 +13,7 @@
 <body>
 	
 		<nav class="navbar navbar-expand-sm bg-light navbar-light">
+<<<<<<< Updated upstream
 		  <!-- Brand/logo -->
 		  <a class="navbar-brand" href="index.html">Logo</a>
 		  
@@ -42,6 +43,34 @@
 			      </div>
 			    </li>
 		  </ul>
+=======
+			<!-- Brand/logo -->
+			<a class="navbar-brand" href="index.html">Logo</a>
+			
+			<!-- Links -->
+			<ul class="navbar-nav">
+				<li class="nav-item">
+				<a class="nav-link" href="index.html">Clientes</a>
+				</li>
+				<li class="nav-item">
+				<a class="nav-link" href="requerimientos.html">Requerimientos por Atender</a>
+				</li>
+			</ul>
+			<ul class="navbar-nav offset-6">
+				<!-- Dropdown -->
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+						Usuario
+					</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">Link 1</a>
+						<a class="dropdown-item" href="#">Link 2</a>
+						<hr>
+						<a class="dropdown-item" href="../Login/index.html">Cerrar Session</a>
+					</div>
+					</li>
+			</ul>
+>>>>>>> Stashed changes
 		</nav>
 	<div class="container-sm mt-4">
 		<div class="row">
@@ -51,10 +80,17 @@
 		</div>
 		<div class="row">
 			<div class="col">
-					<button type="button" class="btn btn-primary rounded-pill" data-toggle="modal" data-target="#myModal">
-					    Agregar Cliente
-					</button>
+				<button type="button" class="btn btn-primary rounded-pill" data-toggle="modal" data-target="#myModal_empresa">
+							Agregar Empresa
+				</button>					  
+			</div>
+			<div class="col">
+				<button type="button" class="btn btn-primary rounded-pill" data-toggle="modal" data-target="#myModal">
+					Agregar Cliente
+				</button>
+			</div>
 
+<<<<<<< Updated upstream
 					  <!-- The Modal -->
 					  <div class="modal fade" id="myModal">
 					    <div class="modal-dialog modal-lg">
@@ -133,20 +169,24 @@
 					    </div>
 					</div>
 
+=======
+					
+>>>>>>> Stashed changes
+		</div>
+
+	</div>
+	<div class="row mt-4">
+		<div class="col">
+			<label for="search">Busqueda</label>
+			<input type="text" id="buscar" placeholder="Busqueda ... Empresa/Cliente" class="form-control">
 		</div>
 	</div>
-		<div class="row mt-4">
-			<div class="col">
-				<label for="search">Busqueda</label>
-				<input type="text" id="buscar" placeholder="Busqueda ... Empresa/Cliente" class="form-control">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col offset-7">
-				<p class="text-muted" id="cantidadCliente"></p>
-			</div>
+	<div class="row">
+		<div class="col offset-7">
+			<p class="text-muted" id="cantidadCliente"></p>
 		</div>
 	</div>
+
 	<div class="container mt-4">
 		<div class="row">
 			<div class="col table-hover">
@@ -167,7 +207,152 @@
 	</div>
 
 
-	  <!-- The Modal -->
+
+	  <!-- The Modal Cliente-->
+	  <div class="modal fade" id="myModal">
+		<div class="modal-dialog modal-lg">
+		  <div class="modal-content">
+		  <form id="form_guardar">
+			<!-- Modal Header -->
+			<div class="modal-header">
+			  <h4 class="modal-title">Cliente Nuevo</h4>
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			
+			<!-- Modal body -->
+			<div class="modal-body">
+			  <div class="container">
+				  <div class="row">
+					  <div class="col">
+						  <label for="name">Nombres</label>
+						  <input type="text" placeholder="Su Nombre Completos" class="form-control" id="nombres">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col" id="select_Empresa">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col">
+						  <label for="Email">Email</label>
+						  <input type="email" placeholder="Su Email" class="form-control" id="email">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col">
+						  <label for="telefono">Telefono</label>
+						  <input type="text" class="form-control" placeholder="Su telefono" id="telefono">
+					  </div>
+					  <div class="col">
+						  <label for="celular">Celular</label>
+						  <input type="text" class="form-control" placeholder="Su Celular" id="celular">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col">
+						  <label for="direccion">Dirección</label>
+						  <input type="text" class="form-control" placeholder="Su Dirección" id="direccion">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col-6">
+						  <label for="direccion">Posicion</label>
+						  <input type="text" class="form-control" placeholder="Su Posicion" id="posicion">
+					  </div>
+					  <div class="col-6">
+						  <label for="direccion">Distrito</label>
+						  <input type="text" class="form-control" placeholder="Su Distrito" id="distrito">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col">
+						  <label for="ciudad">Ciudad</label>
+						  <input type="text" class="form-control" placeholder="Su Ciudad" id="ciudad">
+					  </div>
+					  <div class="col">
+						  <label for="provincia">Provincia</label>
+						  <input type="text" class="form-control" placeholder="Su Provincia" id="provincia">
+					  </div>
+				  </div>
+			  </div>
+			</div>
+			
+			<!-- Modal footer Empresa-->
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-success rounded-pill">Guardar</button>
+				</form>
+				  <button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Cerrar</button>
+			</div>
+			
+		  </div>
+		</div>
+
+	<!-- The Modal -->
+	<div class="modal fade" id="myModal_empresa">
+		<div class="modal-dialog modal-lg">
+		  <div class="modal-content">
+		  <form id="form_guardar">
+			<!-- Modal Header -->
+			<div class="modal-header">
+			  <h4 class="modal-title">Empresa Nueva</h4>
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			
+			<!-- Modal body -->
+			<div class="modal-body">
+			  <div class="container">
+				  <div class="row">
+					  <div class="col">
+						  <label for="name">Razon Social</label>
+						  <input type="text" placeholder="Su Razon Social" class="form-control" id="nombres">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col">
+						  <label for="Email">RUC</label>
+						  <input type="email" placeholder="Su RUC" class="form-control" id="ruc">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col">
+						  <label for="telefono">Rubro</label>
+						  <input type="text" class="form-control" placeholder="Su Rubro" id="rubro">
+					  </div>
+					  <div class="col">
+						  <label for="celular">Pagina Web</label>
+						  <input type="text" class="form-control" placeholder="Su Pagina Web" id="web">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col">
+						  <label for="direccion">Dirección</label>
+						  <input type="text" class="form-control" placeholder="Su Dirección" id="direccion">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col-6">
+						  <label for="direccion">Refe. Dirección</label>
+						  <input type="text" class="form-control" placeholder="Referencia" id="posicion">
+					  </div>
+					  <div class="col-6">
+						  <label for="direccion">Aniversario</label>
+						  <input type="date" class="form-control" id="aniversario">
+					  </div>
+				  </div>
+			  </div>
+			</div>
+			
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-success rounded-pill">Guardar</button>
+				</form>
+				  <button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Cerrar</button>
+			</div>
+			
+		  </div>
+		</div>
+
+	  <!-- The Modal Editar-->
 	  <div class="modal fade" id="myModalEditar">
 		<div class="modal-dialog modal-lg">
 		  <div class="modal-content">
