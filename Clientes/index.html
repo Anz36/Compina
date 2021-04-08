@@ -56,7 +56,7 @@
 					  <div class="modal fade" id="myModal">
 					    <div class="modal-dialog modal-lg">
 					      <div class="modal-content">
-					      
+					      <form id="form_guardar">
 					        <!-- Modal Header -->
 					        <div class="modal-header">
 					          <h4 class="modal-title">Cliente Nuevo</h4>
@@ -67,9 +67,7 @@
 					        <div class="modal-body">
 					          <div class="container">
 					          	<div class="row">
-					          		
 					          		<div class="col-6">
-					          			<form method="POST" id="form_guardar">
 					          			<label for="name">Nombres</label>
 					          			<input type="text" placeholder="Su Nombre" class="form-control" id="nombres">
 					          		</div>
@@ -101,6 +99,10 @@
 					          		</div>
 					          	</div>
 					          	<div class="row">
+					          		<div class="col-6">
+					          			<label for="direccion">Posicion</label>
+					          			<input type="text" class="form-control" placeholder="Su Posicion" id="posicion">
+					          		</div>
 					          		<div class="col-6">
 					          			<label for="direccion">Distrito</label>
 					          			<input type="text" class="form-control" placeholder="Su Distrito" id="distrito">

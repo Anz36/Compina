@@ -23,7 +23,17 @@ $(function(){
     })
 
     $('#form_guardar').submit(function(e) {
-        console.log("Guardar");
+        const datos = {
+            nombres: $('#nombres').val(),
+            apellidos: $('#apellidos').val(),
+            email: $('#email').val(),
+            telefono: $('#telefono').val(),
+            celular: $('#celular').val(),
+            direccion: $('#direccion').val(),
+            distrito: $('#distrito').val(),
+            ciudad: $('#ciudad').val(),
+            province: $('#province').val(),
+        }
     })
 
     $('#buscar').keyup(function(){        
