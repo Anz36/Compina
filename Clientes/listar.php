@@ -7,7 +7,8 @@
         $json[]= array(
             'id' => $row['id'],
             'name' => $row['name'],
-            'business' => $row['business']
+            'business' => $row['business'],
+            'phone' => $row['phone']
         );
     }
     $jsonString = json_encode($json);
