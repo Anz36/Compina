@@ -10,15 +10,14 @@
     $distrito = $_POST["distrito"];
     $ciudad = $_POST["ciudad"];
     $provincia = $_POST["provincia"];
-    /* $query = "UPDATE customers SET name='$nombres',position='$posicion',address='$direccion',district='$distrito',city='$ciudad',province='$provincia',email='$email',phone='$telefono',movil='$celular' WHERE id = '$id'";
+    $query = "UPDATE customers SET name='$nombres',position='$posicion',address='$direccion',district='$distrito',city='$ciudad',province='$provincia',email='$email',phone='$telefono',movil='$celular' WHERE id = '$id'";
     $result = mysqli_query($conexion,$query);   
     
     if($result)
         echo "Editado correctamente";
     else
-        echo "Error al Editar"; */
+        echo "Error al Editar";
     
-        $r = "";
-        $r.=$id." ";
+      
 
 ?>

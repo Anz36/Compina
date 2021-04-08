@@ -180,15 +180,15 @@ $(function(){
     $('#form_editar').submit(function() {
            
         var id = $('#idEditar').val();         
-        var nombres = $('#nombres').val();
-        var email = $('#email').val();
-        var telefono = $('#telefono').val();
-        var celular = $('#celular').val();
-        var posicion = $('#posicion').val();
-        var direccion = $('#direccion').val();
-        var distrito = $('#distrito').val();
-        var ciudad = $('#ciudad').val();
-        var provincia = $('#provincia').val();        
+        var nombres = $('#nombresE').val();
+        var email = $('#emailE').val();
+        var telefono = $('#telefonoE').val();
+        var celular = $('#celularE').val();
+        var posicion = $('#posicionE').val();
+        var direccion = $('#direccionE').val();
+        var distrito = $('#distritoE').val();
+        var ciudad = $('#ciudadE').val();
+        var provincia = $('#provinciaE').val();        
         $.ajax({
             url: 'editar2.php',
             type: 'POST',
