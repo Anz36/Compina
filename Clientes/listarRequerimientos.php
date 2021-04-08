@@ -7,7 +7,7 @@
         return $out;
     }
     include ("../conexion/conexion.php");
-    $query = "select idconsulta,nombres,empresa,email,telefono,fecha_consulta,asunto from consultas";
+    $query = "SELECT *  FROM requirements";
     $result = mysqli_query($conexion,$query);
     $json = array();
     while($row = mysqli_fetch_array($result)){
