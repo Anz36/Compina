@@ -10,7 +10,7 @@ CREATE TABLE customersTemp(
     email VARCHAR(255) NOT NULL,
     phone VARCHAR(50) NOT NULL,
     movil VARCHAR(50) NOT NULL,
-    PRIMARY KEY (id),
+    PRIMARY KEY (id)
 ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8;
 
 CREATE TABLE requirements (
