@@ -96,15 +96,15 @@ $(function(){
                 let c = 0;
                     tarea.forEach(element => {
                         r +=`<tr>
-                                <td></td>
-                                <td></td>
+                                <td>Atender</td>
                                 <td>${element.id}</td>
-                                <td>${element.nombre}</td>
                                 <td>${element.empresa}</td>
+                                <td>${element.nombre}</td>
                                 <td>${element.email}</td>
                                 <td>${element.telefono}</td>
                                 <td>${element.fecha}</td>
-                                <td>${element.asunto}</td>
+                                <td>${element.mensaje}</td>
+                                <td>${element.origen}</td>
                             </tr>`; 
                             c++;                                                 
                     });
