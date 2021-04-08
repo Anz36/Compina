@@ -55,8 +55,9 @@
 					  <!-- The Modal -->
 					  <div class="modal fade" id="myModal">
 					    <div class="modal-dialog modal-lg">
-					      <div class="modal-content">
-					      
+					      <div class="modal-content">					      		          	
+							<form id="form_guardar">
+
 					        <!-- Modal Header -->
 					        <div class="modal-header">
 					          <h4 class="modal-title">Cliente Nuevo</h4>
@@ -66,10 +67,8 @@
 					        <!-- Modal body -->
 					        <div class="modal-body">
 					          <div class="container">
-					          	<div class="row">
-					          		
+					          	<div class="row">				
 					          		<div class="col-6">
-					          			<form method="POST" id="form_guardar">
 					          			<label for="name">Nombres</label>
 					          			<input type="text" placeholder="Su Nombre" class="form-control" id="nombres">
 					          		</div>
@@ -121,9 +120,9 @@
 					        
 					        <!-- Modal footer -->
 					        <div class="modal-footer">
-					        	<button type="submit" class="btn btn-success rounded-pill">Guardar</button>
-					        	</form>
+					        	<button type="submit" class="btn btn-success rounded-pill">Guardar</button>					        	
 					          	<button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Cerrar</button>
+							</form>
 					        </div>
 					        
 					      </div>

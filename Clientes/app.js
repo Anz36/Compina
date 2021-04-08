@@ -22,7 +22,7 @@ $(function(){
             }      
     })
 
-    $('#form_guardar').submit(function(e) {
+    $('#form_guardar').submit(function() {
         console.log("Guardar");
     })
 
