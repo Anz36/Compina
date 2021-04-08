@@ -11,8 +11,15 @@
     $ciudad = $_POST["ciudad"];
     $provincia = $_POST["provincia"];
     $name = $nombres." ".$apellidos;
-    $query = $sentencia = "INSERT INTO customers (name,position,address,district,city,province,email,phone,movil) VALUES ($name, $posicion, $direccion, $distrito, $ciudad, $provincia, $email, $telefono, $celular)";
-    $result = mysqli_query($conexion,$query);
+    $query = "INSERT INTO customers (name,position,address,district,city,province,email,phone,movil) VALUES ('$name', '$posicion', '$direccion', '$distrito', '$ciudad', '$provincia', '$email', '$telefono', '$celular')";
+    $result = mysqli_query($conexion,$query);   
+    
+    if($result)
+        echo "Agregado correctamente";
+    else
+        echo "Error al Agregar";
+    
+
     
 
 
