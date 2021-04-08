@@ -1,6 +1,6 @@
 <?php
     include ("../conexion/conexion.php");
-    $nombres = $_POST["nombres"];
+    $nombres = $_POST["nombre_empresa"];
     $ruc = $_POST["ruc"];
     $rubro = $_POST["rubro"];
     $web = $_POST["web"];
