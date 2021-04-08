@@ -26,7 +26,7 @@ $(function(){
         })
     }
     
-    $('#form_guardar').submit(function() {
+    $('#form_guardarEmpresa').submit(function() {
         if($('#nombre_empresa').val()  && $('#ruc').val() && $('#rubro').val()
             && $('#web').val() && $('#direccion_empresa').val() && $('#referencia_empresa').val() && $('#aniversario').val()){            
                 var nombres = $('#nombre_empresa').val();
@@ -35,7 +35,7 @@ $(function(){
                 var web = $('#web').val();
                 var direccion_empresa = $('#direccion_empresa').val();
                 var referencia_empresa = $('#referencia_empresa').val();
-                var aniversario = $('#distrito').val();       
+                var aniversario = $('#aniversario').val();       
                 $.ajax({
                     url: 'guardarEmpresa.php',
                     type: 'POST',
