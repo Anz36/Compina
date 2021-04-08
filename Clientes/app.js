@@ -30,10 +30,14 @@ $(function(){
             telefono: $('#telefono').val(),
             celular: $('#celular').val(),
             direccion: $('#direccion').val(),
+            posicion: $('#posicion').val(),
             distrito: $('#distrito').val(),
             ciudad: $('#ciudad').val(),
-            province: $('#province').val(),
-        }
+            provincia: $('#provincia').val(),
+        };
+        $.post('insertarCliente.php', datos, function (response){
+            console.log(response);
+        })
     })
 
     $('#buscar').keyup(function(){        
