@@ -22,6 +22,7 @@ $(function(){
             }      
     })
 
+<<<<<<< HEAD
     $('#form_guardar').submit(function() {
         var nombres = $('#nombres').val();
         var apellidos = $('#apellidos').val();
@@ -42,6 +43,24 @@ $(function(){
                 alert(respuesta);
             }
         });
+=======
+    $('#form_guardar').submit(function(e) {
+        const datos = {
+            nombres: $('#nombres').val(),
+            apellidos: $('#apellidos').val(),
+            email: $('#email').val(),
+            telefono: $('#telefono').val(),
+            celular: $('#celular').val(),
+            direccion: $('#direccion').val(),
+            posicion: $('#posicion').val(),
+            distrito: $('#distrito').val(),
+            ciudad: $('#ciudad').val(),
+            provincia: $('#provincia').val(),
+        };
+        $.post('insertarCliente.php', datos, function (response){
+            console.log(response);
+        })
+>>>>>>> 8d9003dde15f956d8e3df7785fa079efae236ed8
     })
 
     $('#buscar').keyup(function(){        
