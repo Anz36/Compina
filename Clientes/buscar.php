@@ -2,14 +2,15 @@
     include ("../conexion/conexion.php");
     $buscado = $_POST['buscado'];
     if(!empty($buscado)){
-        $query = "SELECT * from clientes where nombres like '$buscado%' or apellidos like '$buscado%' or empresa like '$buscado%'";
+        $query = "SELECT * from customers where name like '$buscado%' or email like '$buscado%' or phone like '$buscado%'";
         $result = mysqli_query($conexion,$query);
         $json = array();
         while($row = mysqli_fetch_array($result)){
             $json[] = array(
-                'id' => $row['idcliente'],
-                'nombre' => $row['nombres'].' '.$row['apellidos'],
-                'empresa' => $row['empresa']
+            'id' => $row['id'],
+            'name' => $row['name'],
+            'business' => $row['business'],
+            'phone' => $row['phone']
             );
         }
         $jsonString = json_encode($json);
