@@ -1,13 +1,13 @@
 <?php
     include ("../conexion/conexion.php");
-    $query = "select idcliente,nombres,apellidos,empresa from clientes";
+    $query = "SELECT * FROM customers";
     $result = mysqli_query($conexion,$query);
     $json = array();
     while($row = mysqli_fetch_array($result)){
         $json[]= array(
-            'id' => $row['idcliente'],
-            'nombre' => $row['nombres'].' '.$row['apellidos'],
-            'empresa' => $row['empresa']
+            'id' => $row['id'],
+            'name' => $row['name'],
+            'business' => $row['business']
         );
     }
     $jsonString = json_encode($json);

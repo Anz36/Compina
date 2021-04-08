@@ -67,89 +67,53 @@
 					        <div class="modal-body">
 					          <div class="container">
 					          	<div class="row">
+					          		
 					          		<div class="col-6">
+					          			<form method="POST" id="form_guardar">
 					          			<label for="name">Nombres</label>
-					          			<input type="text" placeholder="Su Nombre" class="form-control">
+					          			<input type="text" placeholder="Su Nombre" class="form-control" id="nombres">
 					          		</div>
 					          		<div class="col-6">
 					          			<label for="last name">Apellidos</label>
-					          			<input type="text" placeholder="Su Apellido" class="form-control">
+					          			<input type="text" placeholder="Su Apellido" class="form-control" id="apellidos">
 					          		</div>
 					          	</div>
 					          	<div class="row">
 					          		<div class="col">
 					          			<label for="Email">Email</label>
-					          			<input type="email" placeholder="Su Email" class="form-control">
+					          			<input type="email" placeholder="Su Email" class="form-control" id="email">
 					          		</div>
 					          	</div>
 					          	<div class="row">
-					          		<div class="col-6">
-					          			<label for="last name">F. Atencion</label>
-					          			<input type="text" class="bg-dark form-control">
-					          		</div>
-					          		<div class="col-6">
-					          			<label for="Skype">Skype</label>
-					          			<input type="text" placeholder="Su Skype" class="form-control">
-					          		</div>
-					          	</div>
-					          	<div class="row">
-					          		<div class="col">
-					          			<label for="cumpleaños">Cumpleaños</label>
-					          			<input type="date" class="form-control">
-					          		</div>
 					          		<div class="col">
 					          			<label for="telefono">Telefono</label>
-					          			<input type="text" class="form-control" placeholder="Su telefono">
+					          			<input type="text" class="form-control" placeholder="Su telefono" id="telefono">
 					          		</div>
 					          		<div class="col">
 					          			<label for="celular">Celular</label>
-					          			<input type="text" class="form-control" placeholder="Su Celular">
+					          			<input type="text" class="form-control" placeholder="Su Celular" id="celular">
 					          		</div>
 					          	</div>
 					          	<div class="row">
 					          		<div class="col">
 					          			<label for="direccion">Dirección</label>
-					          			<input type="text" class="form-control" placeholder="Su Dirección">
-					          		</div>
-					          		<div class="col">
-					          			<label for="referencia">Referencia</label>
-					          			<input type="text" class="form-control" placeholder="Su referencia">
+					          			<input type="text" class="form-control" placeholder="Su Dirección" id="direccion">
 					          		</div>
 					          	</div>
 					          	<div class="row">
-					          		<div class="col">
+					          		<div class="col-6">
 					          			<label for="direccion">Distrito</label>
-					          			<select name="distrito" class="form-control">
-					          				<option value="null">Seleccione</option>
-					          			</select>
+					          			<input type="text" class="form-control" placeholder="Su Distrito" id="distrito">
 					          		</div>
 					          	</div>
 					          	<div class="row">
 					          		<div class="col">
 					          			<label for="ciudad">Ciudad</label>
-					          			<input type="text" class="form-control" placeholder="Su Ciudad">
+					          			<input type="text" class="form-control" placeholder="Su Ciudad" id="ciudad">
 					          		</div>
 					          		<div class="col">
 					          			<label for="provincia">Provincia</label>
-					          			<input type="text" class="form-control" placeholder="Su Provincia">
-					          		</div>
-					          		<div class="col">
-					          			<label for="pais">Pais</label>
-					          			<input type="text" class="form-control" placeholder="Su Pais">
-					          		</div>
-					          		<div class="col">
-					          			<label for="postal">C.Postal</label>
-					          			<input type="text" placeholder="Su C.Postal" class="form-control">
-					          		</div>
-					          	</div>
-					          	<div class="row">
-					          		<div class="col">
-					          			<label for="fechaAviso">Fecha Aviso</label>
-					          			<input type="date" class="form-control">
-					          		</div>
-					          		<div class="col">
-					          			<label for="fechaAviso">Fecha Atencion</label>
-					          			<input type="date" class="form-control">
+					          			<input type="text" class="form-control" placeholder="Su Provincia" id="provincia">
 					          		</div>
 					          	</div>
 					          </div>
@@ -157,7 +121,8 @@
 					        
 					        <!-- Modal footer -->
 					        <div class="modal-footer">
-					        	<button type="button" class="btn btn-success rounded-pill">Guardar</button>
+					        	<button type="submit" class="btn btn-success rounded-pill">Guardar</button>
+					        	</form>
 					          	<button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Cerrar</button>
 					        </div>
 					        

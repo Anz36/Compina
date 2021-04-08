@@ -8,11 +8,11 @@ $(function(){
             let contador=0;
                 tarea.forEach(element => {
                     r +=`<tr>
-                            <td></td>
-                            <td></td>
+                            <td>Editar</td>
+                            <td>Elimar</td>
                             <td>${element.id}</td>
-                            <td>${element.nombre}</td>
-                            <td>${element.empresa}</td>
+                            <td>${element.name}</td>
+                            <td>${element.business}</td>
                         </tr>`;                                                  
                     contador++;
                 });
@@ -20,6 +20,10 @@ $(function(){
             $('#listaCLiente').html(r);
             $('#cantidadCliente').html("Actualmente hay un total de "+contador+" Clientes");
             }      
+    })
+
+    $('#form_guardar').submit(function(e) {
+        console.log("Guardar");
     })
 
     $('#buscar').keyup(function(){        
