@@ -67,13 +67,9 @@
 					        <div class="modal-body">
 					          <div class="container">
 					          	<div class="row">
-					          		<div class="col-6">
+					          		<div class="col">
 					          			<label for="name">Nombres</label>
-					          			<input type="text" placeholder="Su Nombre" class="form-control" id="nombres">
-					          		</div>
-					          		<div class="col-6">
-					          			<label for="last name">Apellidos</label>
-					          			<input type="text" placeholder="Su Apellido" class="form-control" id="apellidos">
+					          			<input type="text" placeholder="Su Nombre Completos" class="form-control" id="nombres">
 					          		</div>
 					          	</div>
 					          	<div class="row">
@@ -163,7 +159,83 @@
 			</div>
 		</div>
 	</div>
-	<h4 id="mensaje"></h4>
+
+
+	  <!-- The Modal -->
+	  <div class="modal fade" id="myModalEditar">
+		<div class="modal-dialog modal-lg">
+		  <div class="modal-content">
+		  <form id="form_editar">
+			<!-- Modal Header -->
+			<div class="modal-header">
+			  <h4 class="modal-title">Cliente Nuevo</h4>
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+			</div>
+			
+			<!-- Modal body -->
+			<div class="modal-body">
+			  <div class="container">
+				  <div class="row">
+					  <div class="col">
+						  <label for="name">Nombres</label>
+						  <input type="text" placeholder="Su Nombre" class="form-control" id="nombresE">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col">
+						  <label for="Email">Email</label>
+						  <input type="email" placeholder="Su Email" class="form-control" id="emailE">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col">
+						  <label for="telefono">Telefono</label>
+						  <input type="text" class="form-control" placeholder="Su telefono" id="telefonoE">
+					  </div>
+					  <div class="col">
+						  <label for="celular">Celular</label>
+						  <input type="text" class="form-control" placeholder="Su Celular" id="celularE">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col">
+						  <label for="direccion">Dirección</label>
+						  <input type="text" class="form-control" placeholder="Su Dirección" id="direccionE">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col-6">
+						  <label for="direccion">Posicion</label>
+						  <input type="text" class="form-control" placeholder="Su Posicion" id="posicionE">
+					  </div>
+					  <div class="col-6">
+						  <label for="direccion">Distrito</label>
+						  <input type="text" class="form-control" placeholder="Su Distrito" id="distritoE">
+					  </div>
+				  </div>
+				  <div class="row">
+					  <div class="col">
+						  <label for="ciudad">Ciudad</label>
+						  <input type="text" class="form-control" placeholder="Su Ciudad" id="ciudadE">
+					  </div>
+					  <div class="col">
+						  <label for="provincia">Provincia</label>
+						  <input type="text" class="form-control" placeholder="Su Provincia" id="provinciaE">
+						  <input type="hidden"  id="idEditar">
+					  </div>
+				  </div>
+			  </div>
+			</div>
+			
+			<!-- Modal footer -->
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-success rounded-pill">Guardar</button>
+				</form>
+				  <button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Cerrar</button>
+			</div>
+			
+		  </div>
+		</div>
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
 	<script src="app.js"></script>

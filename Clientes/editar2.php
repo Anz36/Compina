@@ -1,5 +1,6 @@
 <?php
     include ("../conexion/conexion.php");
+    $id = $_POST["id"];
     $nombres = $_POST["nombres"];
     $email = $_POST["email"];
     $telefono = $_POST["telefono"];
@@ -9,12 +10,15 @@
     $distrito = $_POST["distrito"];
     $ciudad = $_POST["ciudad"];
     $provincia = $_POST["provincia"];
-    $query = "INSERT INTO customers (name,position,address,district,city,province,email,phone,movil) VALUES ('$nombres', '$posicion', '$direccion', '$distrito', '$ciudad', '$provincia', '$email', '$telefono', '$celular')";
+    /* $query = "UPDATE customers SET name='$nombres',position='$posicion',address='$direccion',district='$distrito',city='$ciudad',province='$provincia',email='$email',phone='$telefono',movil='$celular' WHERE id = '$id'";
     $result = mysqli_query($conexion,$query);   
     
     if($result)
-        echo "Agregado correctamente";
+        echo "Editado correctamente";
     else
-        echo "Error al Agregar";
+        echo "Error al Editar"; */
+    
+        $r = "";
+        $r.=$id." ";
 
 ?>
