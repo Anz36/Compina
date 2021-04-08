@@ -1,4 +1,0 @@
-; <?php exit; ?>
-MYSQL_DATABASE_NAME = "rgarcia_CMR_ACTUAL"
-MYSQL_USER = "rgarcia_CMR_ACTUAL"
-MYSQL_PASSWORD = "hf()K+PAxXUF"

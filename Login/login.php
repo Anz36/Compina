@@ -4,14 +4,14 @@
     $_SESSION['usuario'] = "-1";  
     $usuario=$_POST['usuario'];
     $password=md5($_POST['password']);
-    $sql = "SELECT * FROM usuarios where usuario = '$usuario' and password = '$password'";
+    $sql = "SELECT * FROM users where user_login = '$usuario' and password = '$password'";
     $result = mysqli_query($conexion,$sql);
 
     while($datos = mysqli_fetch_array($result)){
-        $_SESSION['usuario'] = $datos['idusuario'];
+        $_SESSION['usuario'] = $datos['people'];
     }
 
-    if($_SESSION['usuario'] != "-1"){
+    if($_SESSION['usuario']){
         header("Location: ../Clientes/index.html");
     }
     else{
