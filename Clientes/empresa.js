@@ -83,32 +83,6 @@ $(function(){
             })
         }
     })
-    $.ajax({
-            url: 'listarRequerimientos.php',
-            type: 'GET',
-            success: function (respuesta){
-                let tarea = JSON.parse(respuesta);
-                let r ='';
-                let c = 0;
-                    tarea.forEach(element => {
-                        r +=`<tr>
-                                <td></td>
-                                <td></td>
-                                <td>${element.id}</td>
-                                <td>${element.nombre}</td>
-                                <td>${element.empresa}</td>
-                                <td>${element.email}</td>
-                                <td>${element.telefono}</td>
-                                <td>${element.fecha}</td>
-                                <td>${element.asunto}</td>
-                            </tr>`; 
-                            c++;                                                 
-                    });
-                //llenar datos html
-                console.log(c);
-                $('#listaRequerimientos').html(r);
-                }      
-    })
 
     $(document).on('click','.btnEliminar',function(){
         if(confirm('Estas seguro de querer eliminar?')){
@@ -130,46 +104,39 @@ $(function(){
         let element = $(this)[0].parentElement.parentElement;
         let id = $(element).attr('id');
             var nombres = "";
-            var idd = "";
-            var email = "";
-            var telefono = "";
-            var celular = "";
-            var posicion = "";
-            var direccion = "";
-            var distrito = "";
-            var ciudad = "";
-            var provincia = "";
+            var ruc = "";
+            var rubro = "";
+            var web = "";
+            var direccion_empresa = "";
+            var referencia_empresa = "";
+            var aniversario = "";
 
         $.ajax({
-            url:'editar.php',
+            url:'editarEmpresa.php',
             type: 'POST',
             data: {id},
             success: function(respuesta){
                 let tarea = JSON.parse(respuesta);
                 let r ="";
                     tarea.forEach(element => {
-                        nombres = element.nombres;
+                        nombres = element.name;
                         idd = element.id;
-                        email = element.email;
-                        telefono = element.telefono;
-                        celular = element.celular;
-                        posicion = element.posicion;
-                        direccion = element.direccion;
-                        distrito = element.distrito;
-                        ciudad = element.ciudad;
-                        provincia = element.provincia;        
+                        ruc = element.ruc;
+                        rubro = element.rubro;
+                        direccion_empresa = element.address;
+                        referencia_empresa = element.address_reference;
+                        aniversario = element.anniversary;
+                        web = element.page_web;       
                     });
                 //llenar datos html   
                 $('#idEditar').val(idd);
-                $('#nombresE').val(nombres);  
-                $('#emailE').val(email);  
-                $('#telefonoE').val(telefono);  
-                $('#celularE').val(celular);  
-                $('#posicionE').val(posicion);  
-                $('#direccionE').val(direccion);  
-                $('#distritoE').val(distrito);  
-                $('#ciudadE').val(ciudad);
-                $('#provinciaE').val(provincia);        
+                $('#nombre_empresaE').val(nombres);  
+                $('#rucE').val(ruc);  
+                $('#rubroE').val(rubro);  
+                $('#webE').val(web);  
+                $('#direccion_empresaE').val(direccion_empresa);  
+                $('#referencia_empresaE').val(referencia_empresa);  
+                $('#aniversarioE').val(aniversario);              
             }
         })
     })
@@ -178,19 +145,17 @@ $(function(){
     $('#form_editar').submit(function() {
            
         var id = $('#idEditar').val();         
-        var nombres = $('#nombresE').val();
-        var email = $('#emailE').val();
-        var telefono = $('#telefonoE').val();
-        var celular = $('#celularE').val();
-        var posicion = $('#posicionE').val();
-        var direccion = $('#direccionE').val();
-        var distrito = $('#distritoE').val();
-        var ciudad = $('#ciudadE').val();
-        var provincia = $('#provinciaE').val();        
+        var nombres = $('#nombre_empresaE').val();
+        var ruc = $('#rucE').val();
+        var rubro = $('#rubroE').val();
+        var web = $('#webE').val();
+        var direccion_empresa = $('#direccion_empresaE').val();
+        var referencia_empresa = $('#referencia_empresaE').val();
+        var aniversario = $('#aniversarioE').val();          
         $.ajax({
-            url: 'editar2.php',
+            url: 'editar2Empresa.php',
             type: 'POST',
-            data: {id,nombres,email,telefono,celular,posicion,direccion,distrito,ciudad,provincia},
+            data: {id,nombres,ruc,rubro,web,direccion_empresa,referencia_empresa,aniversario},
             success: function(respuesta){
             alert(respuesta);  
             }
