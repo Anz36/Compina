@@ -25,8 +25,7 @@ $(function(){
                 }      
         })
     }
-    
-    $('#form_guardarEmpresa').submit(function() {
+    $('#from_empresa').submit(function() {
         if($('#nombre_empresa').val()  && $('#ruc').val() && $('#rubro').val()
             && $('#web').val() && $('#direccion_empresa').val() && $('#referencia_empresa').val() && $('#aniversario').val()){            
                 var nombres = $('#nombre_empresa').val();
@@ -51,7 +50,7 @@ $(function(){
             alert("Debe completar todos los campos de texto");
         }
         
-    })  
+    })
 
     $('#buscar').keyup(function(){        
         if(($('#buscar').val()) !== ""){
