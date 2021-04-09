@@ -58,7 +58,7 @@ $(function(){
             let buscado = $('#buscar').val();
             console.log(buscado);
             $.ajax({
-                url: 'buscar.php',
+                url: 'buscarEmpresa.php',
                 type: 'POST',
                 data: {buscado},
                 success: function(respuesta){
@@ -68,10 +68,10 @@ $(function(){
                         r +=`<tr>
                             <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
                             <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
-                            <td>${element.id}</td>
-                            <td>${element.name}</td>
-                            <td>${element.business}</td>
-                            <td>${element.phone}</td>
+                                <td>${element.id}</td>
+                                <td>${element.name}</td>
+                                <td>${element.ruc}</td>
+                                <td>${element.rubro}</td>
                         </tr>`; 
                                                  
                         contador++;
