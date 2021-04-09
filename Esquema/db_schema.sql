@@ -115,4 +115,4 @@ CREATE TABLE users(
 INSERT INTO people (id, name, last_name, birthday, email, phone) VALUES 
 (1,'Admin','','2020-04-03','hola@compina.net','123456789');
 INSERT INTO users (id, people, user_login, password, type_user) VALUES 
-(1,1,'admin','123','Administrador');
+(1,1,'admin','202cb962ac59075b964b07152d234b70','Administrador');

@@ -11,7 +11,7 @@
         $_SESSION['usuario'] = $datos['people'];
     }
 
-    if($_SESSION['usuario']){
+    if($_SESSION['usuario']!= "-1"){
         header("Location: ../Clientes/index.html");
     }
     else{

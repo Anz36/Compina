@@ -1,5 +1,6 @@
 $(function(){
-    Listar();
+    Listar();    
+    ListarEmpresa();
     function Listar(){
         $.ajax({
             url: 'listar.php',
@@ -38,11 +39,12 @@ $(function(){
                 var direccion = $('#direccion').val();
                 var distrito = $('#distrito').val();
                 var ciudad = $('#ciudad').val();
-                var provincia = $('#provincia').val();        
+                var provincia = $('#provincia').val();
+                var empresa = $('#empresa').val();        
                 $.ajax({
                     url: 'guardar.php',
                     type: 'POST',
-                    data: {nombres,email,telefono,celular,posicion,direccion,distrito,ciudad,provincia},
+                    data: {empresa,nombres,email,telefono,celular,posicion,direccion,distrito,ciudad,provincia},
                     success: function(respuesta){
                     alert(respuesta);  
                     }
@@ -202,4 +204,23 @@ $(function(){
         Listar();
                 
     }) 
+
+    function ListarEmpresa(){
+        var r = `
+                <label for="ciudad">Empresa</label>
+                <select class='form-control' id='empresa'>
+                <option  value='null'>Seleccionar</opcion>`;
+        $.ajax({
+            url: 'listarEmpresa.php',
+            type: 'GET',
+            success: function(respuesta){
+                tarea = JSON.parse(respuesta);
+                tarea.forEach(element => {
+                    r+= `<option  value='${element.id}'>${element.name}</opcion>`;
+                });
+                r += "</select>";
+                $("#selectEmpresa").html(r);
+            }
+        })
+    }
 })
