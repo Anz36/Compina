@@ -1,7 +1,7 @@
 <?php
 
     include ("../conexion/conexion.php");
-    $query = "SELECT *  FROM requirements";
+    $query = "SELECT *  FROM requirements ORDER BY requirements_date DESC";
     $result = mysqli_query($conexion,$query);
     $json = array();
     while($row = mysqli_fetch_array($result)){

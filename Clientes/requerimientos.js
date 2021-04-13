@@ -32,7 +32,35 @@ $(document).on('click','.btnAtender',function(){
             var empresa = "";
             var cliente = "";
 
-            $('#idAtencion').val(idd);
-            $('#nombresE').val(nombres);  
-            $('#emailE').val(email);  
-}
+            $.ajax({
+            url:'atender.php',
+            type: 'POST',
+            data: {id},
+            success: function(respuesta){
+                let tarea = JSON.parse(respuesta);
+                let r ="";
+                    tarea.forEach(element => {
+                        idd = element.id;
+                        empresa = element.empresa;
+                        cliente = element.cliente;
+                    });
+                //llenar datos html   
+                $('#idRequerimiento').html("ID : "+idd);
+                $('#idDato').val(idd);
+                $('#empresaRequerimiento').html("Empresa : "+empresa);
+                $('#clienteRequerimiento').html("Cliente  : "+cliente);
+            }
+        }) 
+})
+
+$(document).on('click','.btnConfirmar',function(){
+    let id = $('#idDato').val();
+    $.ajax({
+                url:'atencion.php',
+                type: 'POST',
+                data: {id},
+                success: function(respuesta){
+                    window.location.href = respuesta;
+                }
+            })
+})
