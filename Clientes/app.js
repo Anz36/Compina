@@ -1,6 +1,18 @@
 $(function(){
     Listar();    
     ListarEmpresa();
+    ListarUsuario();
+    function ListarUsuario(){
+        $.ajax({
+            url: 'obtenerUsuario.php',
+            type: 'GET',
+            success: function(respuesta){
+                let r =respuesta;                
+                //llenar datos html
+                $('#usuariosession').html(r);
+                }      
+        })
+    }
     function Listar(){
         $.ajax({
             url: 'listar.php',

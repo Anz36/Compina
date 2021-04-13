@@ -8,7 +8,7 @@
     $result = mysqli_query($conexion,$sql);
 
     while($datos = mysqli_fetch_array($result)){
-        $_SESSION['usuario'] = $datos['people'];
+        $_SESSION['usuario'] = $datos['user_login'];
     }
 
     if($_SESSION['usuario']!= "-1"){
@@ -16,5 +16,5 @@
     }
     else{
         header("Location: index.html?mensaje=Datos incorrectos");
-    }
+    } 
 ?>
