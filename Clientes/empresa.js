@@ -65,7 +65,7 @@ $(function(){
                     let tarea = JSON.parse(respuesta);
                     let r ="";
                     tarea.forEach(element => {
-                        r +=`<tr>
+                        r +=`<tr id = "${element.id}">
                             <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
                             <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
                                 <td>${element.id}</td>

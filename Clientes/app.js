@@ -71,7 +71,7 @@ $(function(){
                     let tarea = JSON.parse(respuesta);
                     let r ="";
                     tarea.forEach(element => {
-                        r +=`<tr>
+                        r +=`<tr id = ${element.id}>
                             <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
                             <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
                             <td>${element.id}</td>
@@ -89,33 +89,6 @@ $(function(){
             })
         }
     })
-    $.ajax({
-            url: 'listarRequerimientos.php',
-            type: 'GET',
-            success: function (respuesta){
-                let tarea = JSON.parse(respuesta);
-                let r ='';
-                let c = 0;
-                    tarea.forEach(element => {
-                        r +=`<tr>
-                                <td>Atender</td>
-                                <td>${element.id}</td>
-                                <td>${element.empresa}</td>
-                                <td>${element.nombre}</td>
-                                <td>${element.email}</td>
-                                <td>${element.telefono}</td>
-                                <td>${element.fecha}</td>
-                                <td>${element.mensaje}</td>
-                                <td>${element.origen}</td>
-                            </tr>`; 
-                            c++;                                                 
-                    });
-                //llenar datos html
-                console.log(c);
-                $('#listaRequerimientos').html(r);
-                }      
-    })
-
     $(document).on('click','.btnEliminar',function(){
         if(confirm('Estas seguro de querer eliminar?')){
             let element = $(this)[0].parentElement.parentElement;
