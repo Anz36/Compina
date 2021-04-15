@@ -23,6 +23,7 @@ $(function(){
                 let contador=0;
                     tarea.forEach(element => {
                         r +=`<tr id = "${element.id}">
+                                <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
                                 <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
                                 <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
                                 <td>${element.id}</td>
@@ -84,6 +85,7 @@ $(function(){
                     let r ="";
                     tarea.forEach(element => {
                         r +=`<tr id = ${element.id}>
+                            <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
                             <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
                             <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
                             <td>${element.id}</td>
