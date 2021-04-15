@@ -192,7 +192,7 @@ $(function(){
                 $('#verPosicion').val(posicion);
                 $('#verEmail').val(email);
                 $('#verTelefono').val(telefono);
-                $('#verDireccion').val(direccion);
+                $('#verDireccionCliente').val(direccion);
                 $('#verCiudad').val(ciudad);
                 $('#verProvincia').val(provincia);
                 $('#verDistrito').val(distrito);
