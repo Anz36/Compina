@@ -37,8 +37,7 @@
 			        <div id="usuariosession"></div>
 			      </a>
 			      <div class="dropdown-menu">
-			        <a class="dropdown-item" href="#">Link 1</a>
-			        <a class="dropdown-item" href="#">Link 2</a>
+			        <a class="dropdown-item" href="#">Mi perfil</a>
 			        <hr>
 			        <a class="dropdown-item" href="../Login/index.html">Cerrar Session</a>
 			      </div>
@@ -49,6 +48,11 @@
 		<div class="row">
 			<div class="col">
 				<h1>Modulo Cliente</h1>		
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<p class="text-muted"><small>Recuerda para poner concatenar la Empresa, deberas agregar nueva empresa, en el apartado de "Empresa" en el menu</small></p>
 			</div>
 		</div>
 		<div class="row">
@@ -121,7 +125,6 @@
 								<div class="row">
 									<div class="col-6">
 										<label for="ciudad" id="selectEmpresa">Empresa</label>
-										
 									</div>
 								</div>
 					          </div>
@@ -244,32 +247,119 @@
 			
 		  </div>
 		</div>
+	</div>
 
 		<!-- The Modal Ver-->
 	  <div class="modal fade" id="myModalVer">
-		<div class="modal-dialog modal-lg">
+		<div class="modal-dialog modal-xl">
 		  <div class="modal-content">
-		  <form id="form_editar">
+		  
 			<!-- Modal Header -->
 			<div class="modal-header">
-			  <h4 class="modal-title">Detalle Cliente</h4>
+			  <h4 class="modal-title">Detalles</h4>
 			  <button type="button" class="close" data-dismiss="modal">&times;</button>
 			</div>
 			
 			<!-- Modal body -->
 			<div class="modal-body">
-			  
+			  <div class="container">
+			  	<div class="row">
+			  		<div class="col">
+			  			<h5>Cliente <span id="verCliente" class="badge badge-pill badge-light text-dark"></span></h5>
+			  		</div>
+			  	</div>
+			  	<div class="row">
+			  		<div class="col">
+			  			<label for="posicion">Posicion</label>
+			  			<input type="text" readonly="" class="form-control" id="verPosicion">
+			  		</div>
+			  	</div>
+			  	<div class="row">
+			  		<div class="col">
+			  			<label for="email">Email</label>
+			  			<input type="text" readonly="" class="form-control" id="verEmail">
+			  		</div>
+			  	</div>
+			  	<div class="row">
+			  		<div class="col">
+			  			<label for="telefono">Telefono</label>
+			  			<input type="text" readonly="" class="form-control" id="verTelefono">
+			  		</div>
+			  		<div class="col">
+			  			<label for="celular">Celular</label>
+			  			<input type="text" readonly="" class="form-control" id="verCelular">
+			  		</div>
+			  	</div>
+			  	<div class="row">
+			  		<div class="col">
+			  			<label for="direccion">Direccion</label>
+			  			<input type="text" readonly="" class="form-control" id="verDireccionCliente">
+			  		</div>
+			  	</div>
+			  	<div class="row">
+			  		<div class="col">
+			  			<label for="distrito">Distrito</label>
+			  			<input type="text" readonly="" class="form-control" id="verDistrito">
+			  		</div>
+			  		<div class="col">
+			  			<label for="ciudad">Ciudad</label>
+			  			<input type="text" readonly="" class="form-control" id="verCiudad">
+			  		</div>
+			  		<div class="col">
+			  			<label for="provincia">Provincia</label>
+			  			<input type="text" readonly="" class="form-control" id="verProvincia">
+			  		</div>
+			  	</div>
+			  	<br>
+			  	<hr>
+			  	<div class="row">
+			  		<div class="col">
+			  			<h5>Empresa <span id="verEmpresa" class="badge badge-pill badge-light text-dark"></span></h5>
+			  		</div>
+			  	</div>
+			  	<div class="row">
+			  		<div class="col">
+			  			<label for="ruc">RUC</label>
+			  			<input type="text" readonly="" class="form-control" id="verrRUC">
+			  		</div>
+			  	</div>
+			  	<div class="row">
+			  		<div class="col">
+			  			<label for="rubro">Rubro</label>
+			  			<input type="text" readonly="" class="form-control" id="verRubro">
+			  		</div>
+			  		<div class="col">
+			  			<label for="sitioWeb">Sitio Web</label>
+			  			<input type="text" readonly="" class="form-control" id="verSitioWeb">
+			  		</div>
+			  	</div>
+			  	<div class="row">
+			  		<div class="col">
+			  			<label for="Direccion">Direccion</label>
+			  			<input type="text" readonly="" class="form-control" id="verDireccionEmpresa">
+			  		</div>
+			  	</div>
+			  	<div class="row">
+			  		<div class="col">
+			  			<label for="referencia">Referencia</label>
+			  			<input type="text" readonly="" class="form-control" id="verReferencia">
+			  		</div>
+			  		<div class="col">
+			  			<label for="aniversario">Aniversario</label>
+			  			<input type="date" readonly="" class="form-control" id="verAniversario">
+			  		</div>
+			  	</div>
+			  </div>
 			</div>
 			
 			<!-- Modal footer -->
 			<div class="modal-footer">
-				<button type="submit" class="btn btn-success rounded-pill">Guardar</button>
-				</form>
 				  <button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Cerrar</button>
 			</div>
 			
 		  </div>
 		</div>
+	</div>
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
 	<script src="app.js"></script>

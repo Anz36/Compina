@@ -166,7 +166,42 @@ $(function(){
             }
         })
     })
-
+    $(document).on('click','.btnVer',function(){
+        let elemet = $(this)[0].parentElement.parentElement;
+        let id = $(elemet).attr('id');
+        $.ajax({
+            url: 'verDetalle.php',
+            type: 'POST',
+            data: {id},
+            success: function(respuesta){
+                let tarea = JSON.parse(respuesta);
+                let r = "";
+                tarea.forEach(element => {
+                    nombre = element.nombre;
+                    empresa = element.empresa;
+                    posicion = element.posicion;
+                    direccion = element.direccion;
+                    distrito = element.distrito;
+                    ciudad = element.ciudad;
+                    provincia = element.provincia;
+                    email = element.email;
+                    telefono = element.telefono;
+                    celular = element.celular;
+                });
+                $('#verCliente').html(nombre);
+                $('#verPosicion').val(posicion);
+                $('#verEmail').val(email);
+                $('#verTelefono').val(telefono);
+                $('#verDireccion').val(direccion);
+                $('#verCiudad').val(ciudad);
+                $('#verProvincia').val(provincia);
+                $('#verDistrito').val(distrito);
+                $('#verTelefono').val(telefono);
+                $('#verCelular').val(celular);
+                $('#verEmpresa').html(empresa)
+            }
+        })
+    })
 
     $('#form_editar').submit(function() {
            
