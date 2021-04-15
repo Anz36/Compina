@@ -26,4 +26,7 @@ $.ajax({
                 $('#cantidadAtencion').html("Actualmente hay un total de "+c+" atenciones");
                 $('#listarAtencion').html(r);
                 }      
-    })
+})
+
+
+

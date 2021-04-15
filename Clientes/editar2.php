@@ -10,7 +10,8 @@
     $distrito = $_POST["distrito"];
     $ciudad = $_POST["ciudad"];
     $provincia = $_POST["provincia"];
-    $query = "UPDATE customers SET name='$nombres',position='$posicion',address='$direccion',district='$distrito',city='$ciudad',province='$provincia',email='$email',phone='$telefono',movil='$celular' WHERE id = '$id'";
+    $empresa = $_POST["empresa"];
+    $query = "UPDATE customers SET name='$nombres',position='$posicion',address='$direccion',district='$distrito',city='$ciudad',province='$provincia',email='$email',phone='$telefono',movil='$celular',business = '$empresa' WHERE id = '$id'";
     $result = mysqli_query($conexion,$query);   
     
     if($result)

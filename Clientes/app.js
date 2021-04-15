@@ -1,7 +1,7 @@
 $(function(){
     Listar();    
     ListarEmpresa();
-    ListarUsuario();
+    ListarUsuario();    
     function ListarUsuario(){
         $.ajax({
             url: 'obtenerUsuario.php',
@@ -119,7 +119,7 @@ $(function(){
         }
     })
 
-    $(document).on('click','.btnEditar',function(){
+    $(document).on('click','.btnEditar',function(){     
         let element = $(this)[0].parentElement.parentElement;
         let id = $(element).attr('id');
             var nombres = "";
@@ -150,7 +150,8 @@ $(function(){
                         direccion = element.direccion;
                         distrito = element.distrito;
                         ciudad = element.ciudad;
-                        provincia = element.provincia;        
+                        provincia = element.provincia;  
+                        empresa = element.empresa;       
                     });
                 //llenar datos html   
                 $('#idEditar').val(idd);
@@ -162,10 +163,60 @@ $(function(){
                 $('#direccionE').val(direccion);  
                 $('#distritoE').val(distrito);  
                 $('#ciudadE').val(ciudad);
-                $('#provinciaE').val(provincia);        
+                $('#provinciaE').val(provincia); 
+                $('#empresaE').val(empresa);       
+            }            
+        })  
+        
+    LlenarCbxEmpresaParaEditar();      
+    })
+
+    function LlenarCbxEmpresaParaEditar(){
+        var r = `   
+                <select id='empresaEditar' class="form-control"">`;
+        $.ajax({
+            url: 'listarEmpresa.php',
+            type: 'GET',
+            success: function(respuesta){
+                tarea = JSON.parse(respuesta);
+                tarea.forEach(element => {
+                    r+= `<option  value='${element.id}'>${element.name}</opcion>`;
+                });
+                r += "</select>";
+                $("#selectEmpresaEmpresa").html(r);
+                
+                var idEmpresa = $("#empresaE").val();
+                $("#empresaEditar").val(idEmpresa);
             }
         })
-    })
+    }
+
+    $('#form_editar').submit(function() {
+           
+        var id = $('#idEditar').val();         
+        var nombres = $('#nombresE').val();
+        var email = $('#emailE').val();
+        var telefono = $('#telefonoE').val();
+        var celular = $('#celularE').val();
+        var posicion = $('#posicionE').val();
+        var direccion = $('#direccionE').val();
+        var distrito = $('#distritoE').val();
+        var ciudad = $('#ciudadE').val();
+        var provincia = $('#provinciaE').val();  
+        var empresa = $('#empresaEditar').val();       
+        $.ajax({
+            url: 'editar2.php',
+            type: 'POST',
+            data: {id,nombres,email,telefono,celular,posicion,direccion,distrito,ciudad,provincia,empresa},
+            success: function(respuesta){
+            alert(respuesta);  
+            }
+        });
+        Listar();
+                
+    }) 
+
+
     $(document).on('click','.btnVer',function(){
         let elemet = $(this)[0].parentElement.parentElement;
         let id = $(elemet).attr('id');
@@ -203,34 +254,38 @@ $(function(){
         })
     })
 
-    $('#form_editar').submit(function() {
-           
-        var id = $('#idEditar').val();         
-        var nombres = $('#nombresE').val();
-        var email = $('#emailE').val();
-        var telefono = $('#telefonoE').val();
-        var celular = $('#celularE').val();
-        var posicion = $('#posicionE').val();
-        var direccion = $('#direccionE').val();
-        var distrito = $('#distritoE').val();
-        var ciudad = $('#ciudadE').val();
-        var provincia = $('#provinciaE').val();        
+    //Listar empresa cuando se aprete 'VER'
+    $(document).on('click','.btnVer',function(){
+        let elemet = $(this)[0].parentElement.parentElement;
+        let id = $(elemet).attr('id');
         $.ajax({
-            url: 'editar2.php',
+            url: 'verDetalleEmpresa.php',
             type: 'POST',
-            data: {id,nombres,email,telefono,celular,posicion,direccion,distrito,ciudad,provincia},
+            data: {id},
             success: function(respuesta){
-            alert(respuesta);  
+                let tarea = JSON.parse(respuesta);
+                let r = "";
+                tarea.forEach(element => {
+                    ruc = element.ruc;
+                    rubro = element.rubro;
+                    direccion = element.direccion;
+                    referencia = element.referencia;
+                    aniversario = element.aniversario;
+                    web = element.web;
+                });
+                $('#verrRUC').val(ruc);
+                $('#verRubro').val(rubro);
+                $('#verDireccionEmpresa').val(direccion);
+                $('#verReferencia').val(referencia);
+                $('#verAniversario').val(aniversario);
+                $('#verSitioWeb').val(web);
             }
-        });
-        Listar();
-                
-    }) 
+        })
+    })    
 
     function ListarEmpresa(){
         var r = `
-                <label for="ciudad">Empresa</label>
-                <select class='form-control' id='empresa'>
+                <select id='empresa' class="form-control"">
                 <option  value='null'>Seleccionar</opcion>`;
         $.ajax({
             url: 'listarEmpresa.php',
