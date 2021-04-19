@@ -1,3 +1,12 @@
+    $.ajax({
+            url: 'obtenerUsuario.php',
+            type: 'GET',
+            success: function(respuesta){
+                let r =respuesta;                
+                //llenar datos html
+                $('#usuariosession').html(r);
+                }      
+        })
 $.ajax({
             url: 'listarAtencion.php',
             type: 'GET',

@@ -1,15 +1,8 @@
 <?php 
 
-
 include ("../conexion/conexion.php");
 $id =  $_POST['id'];
-$query = "SELECT business as empresa FROM customers WHERE id = '$id'";
-$result = mysqli_query($conexion,$query);
-$json = array();
-$row = mysqli_fetch_array($result);
-$codigoEmpresa = $row['empresa'];
-//obtener datos de la empresa
-$query = "SELECT * FROM business WHERE id = '$codigoEmpresa'";
+$query = "SELECT * FROM business WHERE id = '$id'";
 $result = mysqli_query($conexion,$query);
 while ($row = mysqli_fetch_array($result)){
 	$json[]= array(

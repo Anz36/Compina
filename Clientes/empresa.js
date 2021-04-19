@@ -1,5 +1,17 @@
 $(function(){
     Listar();
+    ListarUsuario();    
+    function ListarUsuario(){
+        $.ajax({
+            url: 'obtenerUsuario.php',
+            type: 'GET',
+            success: function(respuesta){
+                let r =respuesta;                
+                //llenar datos html
+                $('#usuariosession').html(r);
+                }      
+        })
+    }
     function Listar(){
         $.ajax({
             url: 'listarEmpresa.php',
@@ -10,6 +22,7 @@ $(function(){
                 let contador=0;
                     tarea.forEach(element => {
                         r +=`<tr id = "${element.id}">
+                                <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
                                 <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
                                 <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
                                 <td>${element.id}</td>
@@ -66,6 +79,7 @@ $(function(){
                     let r ="";
                     tarea.forEach(element => {
                         r +=`<tr id = "${element.id}">
+                            <td><a  class = "btn btn-warning btnVer rounded-pill" data-toggle="modal" data-target="#myModalVer"> Ver  </a> </td>
                             <td><a  class = "btn btn-info btnEditar rounded-pill" data-toggle="modal" data-target="#myModalEditar"> Editar  </a> </td>
                             <td><a  class = "btn btn-danger btnEliminar rounded-pill"> Eliminar  </a> </td>
                                 <td>${element.id}</td>
@@ -137,6 +151,34 @@ $(function(){
                 $('#direccion_empresaE').val(direccion_empresa);  
                 $('#referencia_empresaE').val(referencia_empresa);  
                 $('#aniversarioE').val(aniversario);              
+            }
+        })
+    })
+
+    $(document).on('click','.btnVer',function(){
+        let elemet = $(this)[0].parentElement.parentElement;
+        let id = $(elemet).attr('id');
+        $.ajax({
+            url: 'verEmpresa.php',
+            type: 'POST',
+            data: {id},
+            success: function(respuesta){
+                let tarea = JSON.parse(respuesta);
+                let r = "";
+                tarea.forEach(element => {
+                    ruc = element.ruc;
+                    rubro = element.rubro;
+                    direccion = element.direccion;
+                    referencia = element.referencia;
+                    aniversario = element.aniversario;
+                    web = element.web;
+                });
+                $('#verrRUC').val(ruc);
+                $('#verRubro').val(rubro);
+                $('#verDireccionEmpresa').val(direccion);
+                $('#verReferencia').val(referencia);
+                $('#verAniversario').val(aniversario);
+                $('#verSitioWeb').val(web);
             }
         })
     })

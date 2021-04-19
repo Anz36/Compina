@@ -1,4 +1,14 @@
 $.ajax({
+            url: 'obtenerUsuario.php',
+            type: 'GET',
+            success: function(respuesta){
+                let r =respuesta;                
+                //llenar datos html
+                $('#usuariosession').html(r);
+                }      
+        })
+
+$.ajax({
             url: 'listarRequerimientos.php',
             type: 'GET',
             success: function (respuesta){
@@ -43,12 +53,16 @@ $(document).on('click','.btnAtender',function(){
                         idd = element.id;
                         empresa = element.empresa;
                         cliente = element.cliente;
+                        persona =  element.personal;
+                        console.log(persona);
                     });
-                //llenar datos html   
+                //llenar datos html 
+                
                 $('#idRequerimiento').html("ID : "+idd);
                 $('#idDato').val(idd);
                 $('#empresaRequerimiento').html("Empresa : "+empresa);
                 $('#clienteRequerimiento').html("Cliente  : "+cliente);
+                $('#personalRequerimiento').html("Atendido por  : "+persona);
             }
         }) 
 })

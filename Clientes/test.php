@@ -1,5 +1,5 @@
 <?php 
-
-include_once ("listarAtencion.php");
-echo datoPersonal();
+session_start();
+include_once ("../Login/login.php");
+echo $_SESSION['usuario'];
  ?>
