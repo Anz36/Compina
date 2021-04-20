@@ -68,13 +68,16 @@ $(document).on('click','.btnAtender',function(){
 })
 
 $(document).on('click','.btnConfirmar',function(){
-    let id = $('#idDato').val();
-    $.ajax({
-                url:'atencion.php',
-                type: 'POST',
-                data: {id},
-                success: function(respuesta){
-                    window.location.href = respuesta;
-                }
-            })
+    var l = confirm("¿Esta seguro de atender?");
+    if(l){
+        let id = $('#idDato').val();
+        $.ajax({
+                    url:'atencion.php',
+                    type: 'POST',
+                    data: {id},
+                    success: function(respuesta){
+                        window.location.href = respuesta;
+                    }
+                })
+    }
 })
