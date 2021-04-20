@@ -88,7 +88,7 @@
 			      
 			        <!-- Modal Header -->
 			        <div class="modal-header">
-			          <h4 class="modal-title">Atender</h4>
+			          <h4 class="modal-title">VER/EDITAR</h4>
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
 			        </div>
 			        
@@ -98,7 +98,7 @@
 			        		<div class="row">
 			        			<div class="col-2">
 			        				<h6 id="idRequerimiento"></h6>
-			        				<input type="hidden" id="idDato">
+			        				<input type="hidden" id="idDatoAtender">
 			        			</div>
 			        			<div class="col-5">
 			        				<h6 id="empresaRequerimiento"></h6>
@@ -107,12 +107,26 @@
 			        				<h6 id="clienteRequerimiento"></h6>
 			        			</div>
 			        		</div>
+							<div class="row">
+								<div class="col">
+									<h6>Especifique Datos</h6>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<form id="form_atenderFecha">
+										<label for="fechaaviso">Fecha Aviso</label>
+										<input type="date" id="fechaaviso">
+										<button type="submit" >Editar</button>
+								</div>
+							</div>
 			        	</div>
 			        </div>
 			        
 			        <!-- Modal footer -->
 			        <div class="modal-footer">
-			        	<button class="btn btn-success rounded-pill btnConfirmar">Confirmar</button>
+			        	<button type="submit" class="btn btn-success rounded-pill">Confirmar</button>
+					</form>
 			          	<button type="button" class="btn btn-danger rounded-pill" data-dismiss="modal">Close</button>
 			        </div>
 			        

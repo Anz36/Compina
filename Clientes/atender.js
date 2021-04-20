@@ -16,9 +16,9 @@ $.ajax({
                 let c = 0;
                     tarea.forEach(element => {
                         r +=`<tr id = ${element.id}>
-                                <td><a class = "btn btn-info btnAtender rounded-pill" data-toggle="modal" data-target="#myModalAtender"> Ver/Editar  </a> </td>
-                                <td><a class = "btn btn-warning btnAtender rounded-pill" data-toggle="modal" data-target="#myModalAtender"> Ver Historial  </a> </td>
-                                <td><a class = "btn btn-success btnAtender rounded-pill" data-toggle="modal" data-target="#myModalAtender"> Completado  </a> </td>
+                                <td><a class = "btn btn-info btnAtenderEditar rounded-pill" data-toggle="modal" data-target="#myModalAtender"> Ver/Editar  </a> </td>
+                                <td><a class = "btn btn-warning btnAtender2 rounded-pill" data-toggle="modal" data-target="#myModalAtender"> Ver Historial  </a> </td>
+                                <td><a class = "btn btn-success btnAtender3 rounded-pill" data-toggle="modal" data-target="#myModalAtender"> Completado  </a> </td>
                                 <td>${element.id}</td>
                                 <td>${element.persona}</td>
                                 <td>${element.cliente}</td>
@@ -35,6 +35,37 @@ $.ajax({
                 $('#cantidadAtencion').html("Actualmente hay un total de "+c+" atenciones");
                 $('#listarAtencion').html(r);
                 }      
+})
+
+$(document).on('click','.btnAtenderEditar',function(){
+    let element = $(this)[0].parentElement.parentElement;
+    let id = $(element).attr('id');
+        
+    //llenar datos html   
+    $('#idDatoAtender').val(id);    
+       
+})
+
+$('#form_atenderFecha').submit(function() {
+    if($('#fechaaviso').val()){            
+            var fecha = $('#fechaaviso').val();  
+            var id = $('#idDatoAtender').val();       
+            $.ajax({
+                url: 'editaratencion.php',
+                type: 'POST',
+                data: {fecha,id},
+                success: function(respuesta){
+                alert(respuesta);  
+                }
+            });
+            
+            
+    }
+    else{
+        alert("Debe completar todos los campos de texto");
+    } 
+           
+    
 })
 
 
